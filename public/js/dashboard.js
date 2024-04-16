@@ -20,9 +20,20 @@ const rightArrow = document.getElementById("rightArrow");
 slider.addEventListener("mouseover", () => {
     leftArrow.style.left = "0";
     rightArrow.style.right = "0";
+    leftArrow.style
 });
 
 slider.addEventListener("mouseout", () => {
     leftArrow.style.left = "2.5rem";
     rightArrow.style.right = "2.5rem";
 });
+
+// Category bar function
+
+const categoryDropdown = document.getElementById("categoryDropdown");
+const categoryDropdownArrow = document.getElementById("categoryDropdownArrow");
+
+
+categoryDropdown.addEventListener("click", () => {
+    categoryDropdownArrow.classList.toggle("rotate-180");
+})

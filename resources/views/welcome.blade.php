@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.pageLayout')
 
-@section("content")
-<header class="w-full h-auto pl-36 pr-36 sm:pl-0 sm:pr-0">
-  <div class='mt-[4rem]'>
-    <section class="w-full h-1/2 flex justify-center items-center border-2 relative" id="slider">
+@section("pageContent")
+
+    <header class="w-full h-1/2 flex justify-center items-center border-2 relative" id="slider">
       <img src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/4/5/f81fc664-aeaf-441d-b1e4-f115e5eb23ae.jpg.webp?ect=4g" alt="slider" >
      
      <!-- Arrow control section -->
@@ -20,8 +19,7 @@
         <div class="dot w-[1rem] h-[1rem] rounded-full bg-slate-300 cursor-pointer"></div>
         <div class="dot w-[1rem] h-[1rem] rounded-full bg-slate-300 cursor-pointer"></div>
       </div>
-    </section> 
-  </div>
-  </header>
+    </header> 
+ 
   
 @endsection
