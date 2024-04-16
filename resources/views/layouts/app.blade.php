@@ -16,20 +16,22 @@
     <!-- css -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
     <div id="app">
-       <nav class='w-full h-12 bg-green-600 flex items-center justify-between shadow-md shadow-slate-700'>
+       <nav class='w-full h-12 bg-green-600 flex items-center justify-between shadow-md shadow-slate-700 fixed top-0'>
         <h1 class="logo text-red ml-5 font-bold text-white">
             <a href="/">
-             {{config("app.name" , "Olyzno Store.")}}
+             MiniPedia
             </a>
         </h1>
         <div class="navItem flex items-center gap-3 text-white ">
-        <ul class="navItem flex gap-3 text-white ">
+        <ul class="navItem flex items-center gap-3 text-white text-sm">    
                 <li>
-                    <a href="">Dashboard</a>
+                    <a href="">Home</a>
                 </li>
                 <li>
                     <a href="">Product</a>
@@ -37,6 +39,15 @@
                 <li>
                     <a href="">Cart</a>
                 </li>
+
+                @auth
+                @if(Auth::user()->is_admin == 1)
+                <button class="text-white bg-blue-700 p-2 font-bold rounded" 
+                onClick="window.location.href='/admin/dashboard'"
+                >Admin Dashboard</button>
+                @endif
+                @endauth
+
             </ul>
             <div class="profile-wrapper mr-4 relative">
                 <img src="https://source.unsplash.com/200x200/?profile" class='rounded-full cursor-pointer' alt="profile" width='40px' height='40px' id="profileAction">
@@ -54,19 +65,18 @@
                         @endif
                         
                         @else
-                        <form action="{{route('logout')}}" method="post">
+                        <form action="{{route('logout')}}" method="post" class="flex flex-col items-center w-full h-full">
                             @csrf
-                            <button type="submit" class="text-slate-700 w-full h-full text-sm hover:bg-slate-700 hover:text-slate-100 transition-all ">{{__('Logout')}}</button>
-                        </form>
-
-
+                                <button class="text-slate-700 w-full h-full text-sm hover:bg-slate-700 hover:text-slate-100 transition-all ">{{__('My Profile')}}</button>
+                                <button type="submit" class="text-slate-700 w-full h-full text-sm hover:bg-slate-700 hover:text-slate-100 transition-all ">{{__('Logout')}}</button>
+                            </form>
                     @endguest     
 
                 </div>
             </div>
         </div>
        </nav>
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
