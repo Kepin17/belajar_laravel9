@@ -3,6 +3,8 @@
 @section("pageContent")
 
     <header class="w-full h-1/2 flex justify-center items-center border-2 relative" id="slider">
+
+      @auth
       <img src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/4/5/f81fc664-aeaf-441d-b1e4-f115e5eb23ae.jpg.webp?ect=4g" alt="slider" >
      
      <!-- Arrow control section -->
@@ -19,7 +21,10 @@
         <div class="dot w-[1rem] h-[1rem] rounded-full bg-slate-300 cursor-pointer"></div>
         <div class="dot w-[1rem] h-[1rem] rounded-full bg-slate-300 cursor-pointer"></div>
       </div>
+      @endauth
+
+      @guest
+      
+      @endguest
     </header> 
- 
-  
 @endsection

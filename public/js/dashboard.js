@@ -3,9 +3,41 @@
 const profileAction = document.getElementById("profileAction");
 const dropdownAction = document.getElementById("dropdownAction");
 
-profileAction.addEventListener("click", () => {
-    dropdownAction.classList.toggle("hidden");
+profileAction.addEventListener("mouseover", () => {
+    dropdownAction.classList.remove("hidden");
 });
+
+dropdownAction.addEventListener("mouseleave", () => {
+    dropdownAction.classList.add("hidden");
+});
+
+// nav dropdown
+const notification = document.getElementById("notification");
+
+const notificationWrapper = document.getElementById("notificationWrapper");
+
+notification.addEventListener("mouseover", () => {
+    notificationWrapper.classList.remove("hidden");
+});
+
+notificationWrapper.addEventListener("mouseleave", () => {
+    notificationWrapper.classList.add("hidden");
+})
+
+
+// nav cart function
+
+const cartWrapper = document.getElementById("cartWrapper");
+
+const cart = document.getElementById("cart");
+
+cart.addEventListener("mouseover", () => {
+    cartWrapper.classList.remove("hidden");
+});
+
+cartWrapper.addEventListener("mouseleave", () => {
+    cartWrapper.classList.add("hidden");
+})
 
 // homePage function
 
@@ -20,7 +52,7 @@ const rightArrow = document.getElementById("rightArrow");
 slider.addEventListener("mouseover", () => {
     leftArrow.style.left = "0";
     rightArrow.style.right = "0";
-    leftArrow.style
+    leftArrow.style;
 });
 
 slider.addEventListener("mouseout", () => {
@@ -33,7 +65,6 @@ slider.addEventListener("mouseout", () => {
 const categoryDropdown = document.getElementById("categoryDropdown");
 const categoryDropdownArrow = document.getElementById("categoryDropdownArrow");
 
-
 categoryDropdown.addEventListener("click", () => {
-    categoryDropdownArrow.classList.toggle("rotate-180");
-})
+    categoryDropdownArrow.classList.add("rotate-180");
+});
