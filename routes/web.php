@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class , 'index'])->name('home');
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // admin area
 
-Route::get('/admin/dashboard', [App\Http\Controllers\AdminDashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/dashboard' , [ProductController::class, 'index'])->name('admin.dashboard');
+
+Route::get('/admin/dashboard/create', [ProductController::class, 'create'])->name('admin.product.create');
+Route::post('/admin/dashboardcreate', [ProductController::class, 'store'])->name('admin.product.store');

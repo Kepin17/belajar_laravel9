@@ -15,7 +15,7 @@
 
     <!-- css -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+
 
     
     <!-- icons -->
@@ -23,6 +23,7 @@
     
 </head>
 <body>
+    
     <div id="app">
        <nav class='w-full h-14 bg-slate-800 flex items-center justify-between shadow-md shadow-slate-700 fixed top-0 z-10'>
         <div class="navItem flex items-center gap-10">
